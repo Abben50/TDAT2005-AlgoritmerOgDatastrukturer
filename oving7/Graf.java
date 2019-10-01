@@ -1,14 +1,14 @@
 import java.util.Scanner;
-import java.util.*;
 import java.io.*;
 
 class Graf {
     private LinkedList[] graf;
 
     public Graf(String filnavn) {
+        Scanner scan = null;
         try {
             File file = new File(filnavn);
-            Scanner scan = new Scanner(file);
+            scan = new Scanner(file);
             int nodeAntall = scan.nextInt();
             int kantAntall = scan.nextInt();
             scan.nextLine();
@@ -27,6 +27,10 @@ class Graf {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } finally {
+            if (scan != null) {
+                scan.close();
+            }
         }
 
     }
