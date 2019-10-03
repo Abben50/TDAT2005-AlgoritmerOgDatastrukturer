@@ -41,7 +41,7 @@ class Oving7 {
 
         Node currentNode = graf.getNode(node);
 
-        while(currentNode.getNesteNode() != null) {
+        while (currentNode.getNesteNode() != null) {
             int i = currentNode.getNesteNode().getVerdi();
             if (!(visited[i])) {
                 topologiskHjelpeMetode(i, visited, stack, graf);
@@ -62,11 +62,10 @@ class Oving7 {
         }
 
         while (stack.size() != 0) {
-            System.out.print(stack.get(stack.size()-1) + " ");
-            stack.remove(stack.size()-1);
+            System.out.print(stack.get(stack.size() - 1) + " ");
+            stack.remove(stack.size() - 1);
         }
     }
-
 
     public static void main(String[] args) {
         Graf test = new Graf("graf.txt");
@@ -82,7 +81,7 @@ class Oving7 {
 
             }
         }
-        
+        System.out.println();
         topologiskSok(test2);
     }
 }
